@@ -13,6 +13,7 @@ function getPokeMonUrl () {
   // var url = 'http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json';
 
   $.ajax({
+    method: 'GET',
     url: url,
     success: function(data) {
 
@@ -62,6 +63,9 @@ function getPokeMonUrl () {
         // $('#message').append($notFound);
       }
 
+    },
+    error: function(error) {
+      console.log('error', error);
     }
 
   });
@@ -109,13 +113,14 @@ function getPokeMonUrl () {
 
 function addpokeMon(data) {
 
-  // var $pokeMon = $('#pokemonTemplate').clone().removeAttr('id');
-  var $pokeMon = $('#pokemonTemplate').clone().removeClass('id');
+  var $pokeMon = $('#pokemonTemplate').clone().removeAttr('id');
   $pokeMon.find('.id').text(data.id);
   $pokeMon.find('.base_experience').text(data.base_experience);
 
+  console.log($pokeMon);
 
-  $('.containter').append($pokeMon);
+  $('#pokemon').append($pokeMon);
+
 
 
 // console.log('data: ', data);
