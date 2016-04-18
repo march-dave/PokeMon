@@ -1,0 +1,23 @@
+body {
+
+  margin: 10px;
+}
+
+
+#pokemon {
+
+  margin: 10x;
+  padding: 10px;
+
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  width: 200px;
+  height: 150px;
+
+}
+
+#pokemonTemplate {
+  
+  display: none;
+
+}
